@@ -5,6 +5,9 @@ use solutions::p242_solution3;
 use solutions::p217_solution1;
 use solutions::p217_solution2;
 use solutions::p001_solution1;
+use solutions::p001_solution2;
+use solutions::p049_solution1;
+use solutions::p049_solution2;
 
 fn main() {
     let s1: String = "ajay".to_string();
@@ -14,6 +17,10 @@ fn main() {
     //P001 input data and target 
     let numbers3: Vec<u32> = vec![3,4,5,6];
     let target3: u32 = 7;
+    //P049 Input data
+    let string_vec:Vec<&str> = vec!["act","pots","tops","cat","stop","hat"];
+    //let string_vec:Vec<&str> = vec!["ab", "ba", "cd", "dc", "z"];
+
 
     println!("PROBLEM: 242: Is Anagram");
     println!("--> SOLUTION 1");
@@ -31,5 +38,12 @@ fn main() {
     println!("PROBLEM: 001: TWO INTEGER SUM");
     println!("--> SOLUTION 1");
     println!("{:?}", p001_solution1::unwrapped_two_integer_sun(&numbers3, &target3));
+    println!("--> SOLUTION 2");
+    println!("{:?}", p001_solution2::two_integer_sum(&numbers3, &target3));
+    println!("PROBLEM: 049: ANAGRAM GROUP!");
+    println!("--> SOLUTION 1");
+    println!("{:?}", p049_solution1::anagram_group(string_vec.clone()));
+    println!("--> SOLUTION 2");
+    println!("{:?}", p049_solution2::anagram_group(string_vec.clone()));
 
 }

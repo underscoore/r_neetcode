@@ -43,19 +43,19 @@ mod tests{
 
 
     #[test]
-    fn unit_id_duplicate_integer_neg_s2(){
-        let numbers: Vec<u32> = vec![1,2,3,3];
+    fn unit_is_duplicate_integer_neg_s2(){
+       let numbers: Vec<u32> = vec![1,2,3,3];
         assert_eq!(is_duplicate_integer(&numbers), false);
     }
 
     #[test]
-    fn unit_id_duplicate_integer_pos_s2(){
+    fn unit_is_duplicate_integer_pos_s2(){
         let numbers: Vec<u32> = vec![1,2,3,4];
         assert_eq!(is_duplicate_integer(&numbers), true);
     }
 
     #[test]
-    fn unit_id_duplicate_integer_pos_s3(){
+    fn unit_is_duplicate_integer_emp_s2(){
         let numbers: Vec<u32> = vec![];
         assert_eq!(is_duplicate_integer(&numbers), false);
     }
