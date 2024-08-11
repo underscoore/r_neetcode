@@ -7,3 +7,4 @@ pub mod p001_solution1;
 pub mod p001_solution2;
 pub mod p049_solution1;
 pub mod p049_solution2;
+pub mod p347_solution1;
