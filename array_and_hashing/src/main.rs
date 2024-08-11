@@ -8,6 +8,8 @@ use solutions::p001_solution1;
 use solutions::p001_solution2;
 use solutions::p049_solution1;
 use solutions::p049_solution2;
+use solutions::p347_solution1;
+use solutions::p347_solution2;
 
 fn main() {
     let s1: String = "ajay".to_string();
@@ -20,6 +22,8 @@ fn main() {
     //P049 Input data
     let string_vec:Vec<&str> = vec!["act","pots","tops","cat","stop","hat"];
     //let string_vec:Vec<&str> = vec!["ab", "ba", "cd", "dc", "z"];
+    let numbers4: Vec<i32> = vec![1,2,2,3,3,3];
+    let frequency: i32 = 2;
 
 
     println!("PROBLEM: 242: Is Anagram");
@@ -45,5 +49,9 @@ fn main() {
     println!("{:?}", p049_solution1::anagram_group(string_vec.clone()));
     println!("--> SOLUTION 2");
     println!("{:?}", p049_solution2::anagram_group(string_vec.clone()));
-
+    println!("PROBLEM: 347: TOP K ELEMENTS IN LIST");
+    println!("--> SOLUTION 1");
+    println!("{:?}", p347_solution1::top_k_frequent_element(numbers4.clone(), frequency));
+    println!("--> SOLUTION 2");
+    println!("{:?}", p347_solution2::top_k_frequent(numbers4, frequency));
 }
