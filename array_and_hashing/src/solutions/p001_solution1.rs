@@ -44,8 +44,7 @@ pub fn two_integer_sum(numbers: &Vec<u32>, target: &u32) -> Option<Vec<u32>> {
     None
 }
 
-pub fn unwrapped_two_integer_sun(numb: &Vec<u32>, &tar: &u32) -> Vec<u32>{
-
+pub fn unwrapped_two_integer_sun(numb: &Vec<u32>, &tar: &u32) -> Vec<u32> {
     let two_integer_sum_option = two_integer_sum(&numb, &tar);
     let result = match two_integer_sum_option {
         Some(vec) => vec,
@@ -54,32 +53,28 @@ pub fn unwrapped_two_integer_sun(numb: &Vec<u32>, &tar: &u32) -> Vec<u32>{
     result
 }
 
-
 #[cfg(test)]
-mod tests{
+mod tests {
     use crate::solutions::p001_solution1::unwrapped_two_integer_sun;
 
-
     #[test]
-    fn unit_two_integer_sum_pos_s1(){
-        let numbers: Vec<u32> = vec![4,5,6]; 
+    fn unit_two_integer_sum_pos_s1() {
+        let numbers: Vec<u32> = vec![4, 5, 6];
         let target: u32 = 10;
-        assert_eq!(unwrapped_two_integer_sun(&numbers, &target), vec![0,2]);
+        assert_eq!(unwrapped_two_integer_sun(&numbers, &target), vec![0, 2]);
     }
 
     #[test]
-    fn unit_two_integer_sum_neg_s1(){
-        let numbers: Vec<u32> = vec![4,5,6]; 
+    fn unit_two_integer_sum_neg_s1() {
+        let numbers: Vec<u32> = vec![4, 5, 6];
         let target: u32 = 10;
-        assert_ne!(unwrapped_two_integer_sun(&numbers, &target), vec![0,1]);
+        assert_ne!(unwrapped_two_integer_sun(&numbers, &target), vec![0, 1]);
     }
 
     #[test]
-    fn unit_two_integer_sum_dt2_s1(){
-        let numbers: Vec<u32> = vec![5,5];
+    fn unit_two_integer_sum_dt2_s1() {
+        let numbers: Vec<u32> = vec![5, 5];
         let target: u32 = 10;
-        assert_eq!(unwrapped_two_integer_sun(&numbers, &target), vec![0,1]);
+        assert_eq!(unwrapped_two_integer_sun(&numbers, &target), vec![0, 1]);
     }
-
-
 }

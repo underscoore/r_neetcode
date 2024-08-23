@@ -25,26 +25,28 @@
 use std::collections::HashMap;
 
 pub fn anagram_group(strs: Vec<&str>) -> Vec<Vec<String>> {
-    let mut result: HashMap<Vec<u8>, Vec<String>> = HashMap::new(); 
+    let mut result: HashMap<Vec<u8>, Vec<String>> = HashMap::new();
     for s in strs {
         let mut key: [u8; 26] = [0; 26];
         for c in s.chars() {
             key[c as usize - 'a' as usize] += 1;
         }
-        result.entry(key.to_vec()).or_insert(Vec::new()).push(s.to_string());
+        result
+            .entry(key.to_vec())
+            .or_insert(Vec::new())
+            .push(s.to_string());
     }
     result.into_values().collect()
 }
 
 #[cfg(test)]
-mod tests{
+mod tests {
     use crate::solutions::p049_solution1::anagram_group;
 
-    
     #[test]
-    fn unit_anagram_group_pos_s1(){
-//        let strs = ["act","pots","tops","cat","stop","hat"];
-//        let result = anagram_group(strs.to_vec());
+    fn unit_anagram_group_pos_s1() {
+        //        let strs = ["act","pots","tops","cat","stop","hat"];
+        //        let result = anagram_group(strs.to_vec());
         //  XX If you can tell me how to write unit test for this please feel free to raise PR or
         //  add comment on this file
     }

@@ -29,14 +29,14 @@
 //-10,000,000 <= nums[i] <= 10,000,000
 //-10,000,000 <= target <= 10,000,000
 //Purposed solution
-//brute force soltion 
+//brute force soltion
 use std::collections::HashMap;
 
-pub fn two_integer_sum(numbers: &Vec<u32>, target: &u32) -> Vec<u32>{
-let mut num_to_index = HashMap::new();
-    for (i, &num) in numbers.iter().enumerate(){
+pub fn two_integer_sum(numbers: &Vec<u32>, target: &u32) -> Vec<u32> {
+    let mut num_to_index = HashMap::new();
+    for (i, &num) in numbers.iter().enumerate() {
         let complement = target - num;
-        if let Some(&index) = num_to_index.get(&complement){
+        if let Some(&index) = num_to_index.get(&complement) {
             return vec![index as u32, i as u32];
         }
         num_to_index.insert(num, i);
@@ -45,30 +45,27 @@ let mut num_to_index = HashMap::new();
 }
 
 #[cfg(test)]
-mod tests{
+mod tests {
     use crate::solutions::p001_solution1::two_integer_sum;
 
-
     #[test]
-    fn unit_two_integer_sum_pos_s2(){
-        let numbers: Vec<u32> = vec![4,5,6]; 
+    fn unit_two_integer_sum_pos_s2() {
+        let numbers: Vec<u32> = vec![4, 5, 6];
         let target: u32 = 10;
-        assert_eq!(two_integer_sum(&numbers, &target), vec![0,2].into());
+        assert_eq!(two_integer_sum(&numbers, &target), vec![0, 2].into());
     }
 
     #[test]
-    fn unit_two_integer_sum_neg_s2(){
-        let numbers: Vec<u32> = vec![4,5,6]; 
+    fn unit_two_integer_sum_neg_s2() {
+        let numbers: Vec<u32> = vec![4, 5, 6];
         let target: u32 = 10;
-        assert_ne!(two_integer_sum(&numbers, &target), vec![0,1].into());
+        assert_ne!(two_integer_sum(&numbers, &target), vec![0, 1].into());
     }
 
     #[test]
-    fn unit_two_integer_sum_dt2_s2(){
-        let numbers: Vec<u32> = vec![5,5];
+    fn unit_two_integer_sum_dt2_s2() {
+        let numbers: Vec<u32> = vec![5, 5];
         let target: u32 = 10;
-        assert_eq!(two_integer_sum(&numbers, &target), vec![0,1].into());
+        assert_eq!(two_integer_sum(&numbers, &target), vec![0, 1].into());
     }
-
-
 }

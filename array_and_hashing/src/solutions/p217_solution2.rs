@@ -16,17 +16,17 @@ Output: false
 */
 
 // Purposed solution:
-// First I all insert all the element in HashSet 
+// First I all insert all the element in HashSet
 // Then check if a value is already present in HashSet
 // If value is already present in HashSet then return false other wise true
 
 use std::collections::HashSet;
 
-pub fn is_duplicate_integer(numbers: &Vec<u32>) -> bool{
+pub fn is_duplicate_integer(numbers: &Vec<u32>) -> bool {
     let mut set = HashSet::new();
     if numbers.len() > 0 {
-        for num in numbers{
-            if set.contains(num){
+        for num in numbers {
+            if set.contains(num) {
                 return false;
             }
             set.insert(num);
@@ -38,27 +38,24 @@ pub fn is_duplicate_integer(numbers: &Vec<u32>) -> bool{
 }
 
 #[cfg(test)]
-mod tests{
+mod tests {
     use crate::solutions::p217_solution1::is_duplicate_integer;
 
-
     #[test]
-    fn unit_is_duplicate_integer_neg_s2(){
-       let numbers: Vec<u32> = vec![1,2,3,3];
+    fn unit_is_duplicate_integer_neg_s2() {
+        let numbers: Vec<u32> = vec![1, 2, 3, 3];
         assert_eq!(is_duplicate_integer(&numbers), false);
     }
 
     #[test]
-    fn unit_is_duplicate_integer_pos_s2(){
-        let numbers: Vec<u32> = vec![1,2,3,4];
+    fn unit_is_duplicate_integer_pos_s2() {
+        let numbers: Vec<u32> = vec![1, 2, 3, 4];
         assert_eq!(is_duplicate_integer(&numbers), true);
     }
 
     #[test]
-    fn unit_is_duplicate_integer_emp_s2(){
+    fn unit_is_duplicate_integer_emp_s2() {
         let numbers: Vec<u32> = vec![];
         assert_eq!(is_duplicate_integer(&numbers), false);
     }
-
 }
-
