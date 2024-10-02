@@ -46,6 +46,5 @@ mod tests{
 //        let strs = ["act","pots","tops","cat","stop","hat"];
 //        let result = anagram_group(strs.to_vec());
         //  XX If you can tell me how to write unit test for this please feel free to raise PR or
-        //  add comment on this file
     }
 }
